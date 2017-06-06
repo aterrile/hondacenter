@@ -1,0 +1,204 @@
+[28-Mar-2017 13:03:53 America/Santiago] PHP Parse error:  syntax error, unexpected end of file in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 185
+[28-Mar-2017 13:48:12 America/Santiago] PHP Parse error:  syntax error, unexpected end of file in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 185
+[28-Mar-2017 13:48:18 America/Santiago] PHP Parse error:  syntax error, unexpected end of file in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 185
+[28-Mar-2017 14:53:09 America/Santiago] PHP Parse error:  syntax error, unexpected end of file in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 185
+[28-Mar-2017 14:53:11 America/Santiago] PHP Parse error:  syntax error, unexpected end of file in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 185
+[28-Mar-2017 14:53:32 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:53:37 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:54:24 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:54:25 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:54:32 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:54:32 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:54:32 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 3
+[28-Mar-2017 14:55:08 America/Santiago] PHP Fatal error:  Class 'SellData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 7
+[28-Mar-2017 14:56:36 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 14:56:57 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 14:58:38 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 14:58:52 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 14:58:53 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 14:59:21 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 14:59:47 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:01:23 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:01:25 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:01:27 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:01:28 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:01:28 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:01:43 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:02:03 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:06:29 America/Santiago] PHP Fatal error:  Class 'PersonData' not found in /home/daft/public_html/proyectos/inventario/core/app/model/SellData.php on line 9
+[28-Mar-2017 15:06:43 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 197
+[28-Mar-2017 15:08:51 America/Santiago] PHP Parse error:  syntax error, unexpected end of file in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 195
+[28-Mar-2017 15:10:20 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 177
+[28-Mar-2017 15:11:17 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 182
+[28-Mar-2017 15:13:49 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 185
+[28-Mar-2017 15:14:25 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[28-Mar-2017 15:14:40 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 183
+[28-Mar-2017 15:15:59 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[28-Mar-2017 17:15:44 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[28-Mar-2017 17:15:49 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[28-Mar-2017 17:15:55 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[28-Mar-2017 17:16:15 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[30-Mar-2017 13:33:42 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[30-Mar-2017 15:12:41 America/Santiago] PHP Catchable fatal error:  Object of class StockData could not be converted to string in /home/daft/public_html/proyectos/inventario/core/controller/PHPExcel/Classes/PHPExcel/Cell/DefaultValueBinder.php on line 65
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:12:57 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 90
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 91
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 92
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 94
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 97
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 98
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 99
+[30-Mar-2017 15:12:57 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 100
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 78
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 78
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 78
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:13:56 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 78
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 91
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 92
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 93
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 95
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 98
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 99
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 100
+[30-Mar-2017 15:13:56 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:72) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 101
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 71
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 72
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 73
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 74
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 75
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 76
+[30-Mar-2017 15:14:59 America/Santiago] PHP Notice:  Trying to get property of non-object in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 77
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 90
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 91
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 92
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 94
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 97
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 98
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 99
+[30-Mar-2017 15:14:59 America/Santiago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php:71) in /home/daft/public_html/proyectos/inventario/report/inventary-xlsx.php on line 100
+[08-Apr-2017 12:46:27 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[08-Apr-2017 12:47:06 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[08-Apr-2017 12:47:23 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[08-Apr-2017 12:47:31 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[08-Apr-2017 12:48:06 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[08-Apr-2017 12:49:12 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[08-Apr-2017 12:49:19 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[12-Apr-2017 19:00:41 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[17-Apr-2017 15:22:13 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-Apr-2017 15:22:27 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-Apr-2017 15:22:40 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-Apr-2017 15:28:03 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-Apr-2017 15:28:55 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-Apr-2017 15:29:10 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-Apr-2017 15:29:24 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[18-Apr-2017 13:20:33 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[20-Apr-2017 11:28:20 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[20-Apr-2017 18:26:13 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[25-Apr-2017 11:28:55 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[25-Apr-2017 12:44:38 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[25-Apr-2017 12:44:45 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[26-Apr-2017 16:56:31 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[26-Apr-2017 16:56:37 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[29-Apr-2017 10:41:00 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[03-May-2017 11:44:43 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[03-May-2017 11:44:45 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[03-May-2017 11:46:41 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[03-May-2017 11:46:43 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[04-May-2017 14:25:11 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:25:23 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:41:30 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:41:52 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:42:08 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:42:24 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:42:32 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:42:46 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:43:10 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:43:38 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:43:58 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:44:16 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:44:34 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:45:10 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:45:25 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:45:46 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 14:46:06 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 15:30:49 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[04-May-2017 15:30:56 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[05-May-2017 17:08:12 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[05-May-2017 17:08:31 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[10-May-2017 11:35:44 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[10-May-2017 11:36:03 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[16-May-2017 16:09:52 America/Santiago] PHP Fatal error:  Class 'PaymentData' not found in /home/daft/public_html/proyectos/inventario/report/onesell-xlsx.php on line 186
+[17-May-2017 15:17:46 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
+[25-May-2017 11:07:29 America/Santiago] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/daft/public_html/proyectos/inventario/core/controller/Model.php on line 44
