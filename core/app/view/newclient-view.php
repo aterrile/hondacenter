@@ -31,6 +31,24 @@
       <input type="text" name="address1" class="form-control" id="address1" placeholder="Direccion">
     </div>
   </div>
+<div class="form-group">
+    <label for="ciudadCliente" class="col-lg-2 control-label">Ciudad*</label>
+    <div class="col-md-6">
+      <input type="text" name="ciudadCliente" class="form-control" id="ciudadCliente" placeholder="Ciudad">
+    </div>
+  </div>
+<div class="form-group">
+    <label for="comunaCliente" class="col-lg-2 control-label">Comuna*</label>
+    <div class="col-md-6">
+      <input type="text" name="comunaCliente" class="form-control" id="comunaCliente" placeholder="Comuna">
+    </div>
+  </div>
+<div class="form-group">
+    <label for="giroCliente" class="col-lg-2 control-label">Giro*</label>
+    <div class="col-md-6">
+      <input type="text" name="giroCliente" class="form-control" id="giroCliente" placeholder="Giro">
+    </div>
+  </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
     <div class="col-md-6">

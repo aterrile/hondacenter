@@ -14,9 +14,9 @@ class PersonData {
 	}
 
 	public function add_client(){
-		$sql = "insert into person (no,name,lastname,address1,email1,phone1,is_active_access,password,kind,credit_limit,has_credit,created_at) ";
-		$sql .= "value (\"$this->no\",\"$this->name\",\"$this->lastname\",\"$this->address1\",\"$this->email1\",\"$this->phone1\",\"$this->is_active_access\",\"$this->password\",1,\"$this->credit_limit\",$this->has_credit,$this->created_at)";
-		Executor::doit($sql);
+	   	$sql = "insert into person (no,name,lastname,address1,ciudad,comuna,giro,email1,phone1,is_active_access,password,kind,credit_limit,has_credit,created_at) ";
+		$sql .= "value (\"$this->no\",\"$this->name\",\"$this->lastname\",\"$this->address1\",\"$this->ciudad\",\"$this->comuna\",\"$this->giro\",\"$this->email1\",\"$this->phone1\",\"$this->is_active_access\",\"$this->password\",1,\"$this->credit_limit\",$this->has_credit,$this->created_at)";
+        Executor::doit($sql);
 	}
 
 	public function add_provider(){
@@ -48,8 +48,8 @@ class PersonData {
 	}
 
 	public function update_client(){
-		$sql = "update ".self::$tablename." set no=\"$this->no\",name=\"$this->name\",email1=\"$this->email1\",address1=\"$this->address1\",lastname=\"$this->lastname\",phone1=\"$this->phone1\",is_active_access=\"$this->is_active_access\",password=\"$this->password\",has_credit=\"$this->has_credit\",credit_limit=\"$this->credit_limit\" where id=$this->id";
-		Executor::doit($sql);
+		$sql = "update ".self::$tablename." set no=\"$this->no\",name=\"$this->name\",email1=\"$this->email1\",address1=\"$this->address1\",ciudad=\"$this->ciudad\",comuna=\"$this->comuna\",giro=\"$this->giro\",lastname=\"$this->lastname\",phone1=\"$this->phone1\",is_active_access=\"$this->is_active_access\",password=\"$this->password\",has_credit=\"$this->has_credit\",credit_limit=\"$this->credit_limit\" where id=$this->id";
+        Executor::doit($sql);
 	}
 
 	public function update_provider(){

@@ -32,6 +32,26 @@
       <input type="text" name="address1" value="<?php echo $user->address1;?>" class="form-control" id="username" placeholder="Direccion">
     </div>
   </div>
+
+  <div class="form-group">
+    <label for="ciudadCliente" class="col-lg-2 control-label">Ciudad*</label>
+    <div class="col-md-6">
+      <input type="text" name="ciudadCliente" value="<?php echo $user->ciudad;?>" class="form-control" id="ciudadCliente" placeholder="Ciudad">
+    </div>
+  </div>
+<div class="form-group">
+    <label for="comunaCliente" class="col-lg-2 control-label">Comuna*</label>
+    <div class="col-md-6">
+      <input type="text" name="comunaCliente" value="<?php echo $user->comuna;?>" class="form-control" id="comunaCliente" placeholder="Comuna">
+    </div>
+  </div>
+<div class="form-group">
+    <label for="giroCliente" class="col-lg-2 control-label">Giro*</label>
+    <div class="col-md-6">
+      <input type="text" name="giroCliente" value="<?php echo $user->giro;?>" class="form-control" id="giroCliente" placeholder="Giro">
+    </div>
+  </div>
+
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
     <div class="col-md-6">
@@ -45,6 +65,12 @@
       <input type="text" name="phone1"  value="<?php echo $user->phone1;?>"  class="form-control" id="inputEmail1" placeholder="Telefono">
     </div>
   </div>
+
+
+
+
+<!--
+
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label" >Activar Credito</label>
     <div class="col-md-6">
@@ -80,7 +106,7 @@
       <input type="password" name="password" class="form-control" id="phone1" placeholder="Password">
     </div>
     </div>
-
+-->
 
   <p class="alert alert-info">* Campos obligatorios</p>
 
