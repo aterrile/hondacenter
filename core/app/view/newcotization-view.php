@@ -82,6 +82,13 @@ $total = 0;
 <table class="table table-bordered table-hover">
 <thead>
 	<th style="width:30px;">Codigo</th>
+    
+    <th style="width: 30px;">Nombre</th>
+    <th style="width: 30px;">Marca</th>
+    <th style="width: 30px;">Modelo</th>
+    <th style="width: 30px;">Color</th>
+    <th style="width: 30px;">Chasis</th>
+    
 	<th style="width:30px;">Cantidad</th>
 	<th style="width:30px;">Unidad</th>
 	<th>Producto</th>
@@ -91,9 +98,17 @@ $total = 0;
 </thead>
 <?php foreach($_SESSION["cotization"] as $p):
 $product = ProductData::getById($p["product_id"]);
+$info_moto = ProductData::getInfoMoto($p["product_id"]);
 ?>
 <tr >
 	<td><?php echo $product->id; ?></td>
+    
+    <td><?php echo $product->name; ?></td>
+    <td> <?php echo $info_moto->marca; ?> </td>
+    <td> <?php echo $info_moto->modelo; ?> </td>
+    <td> <?php echo $info_moto->color; ?> </td>
+    <td> <?php echo $info_moto->chasis; ?> </td>
+    
 	<td ><?php echo $p["q"]; ?></td>
 	<td><?php echo $product->unit; ?></td>
 	<td><?php echo $product->name; ?></td>
@@ -112,7 +127,7 @@ $product = ProductData::getById($p["product_id"]);
       <div class="clearfix"></div>
 <br>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="box box-primary">
             <div style="padding: 10px;">
                 <strong>Abonos</strong>
@@ -122,7 +137,7 @@ $product = ProductData::getById($p["product_id"]);
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 50%;">
+                                <th style="width: 25%;">
                                 Tipo<br />
                                 <select id="row_tipo_abono" class="form-control">
                                     <option value="">Seleccione...</option>
@@ -146,6 +161,10 @@ $product = ProductData::getById($p["product_id"]);
                                 Fecha<br />
                                 <input id="row_fecha_abono" type="date" class="form-control" value="<?php echo date('Y-m-d') ?>" style="text-align: right;" />
                                 </th>
+                                <th style="width: 25%;">
+                                Identificador<br />
+                                <input id="row_identificador_abono" type="text" class="form-control" value="" style="text-align: right;" />
+                                </th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -156,7 +175,7 @@ $product = ProductData::getById($p["product_id"]);
         </div>
     </div>
     
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="box box-primary">
         <table class="table table-bordered">
         <tr>
@@ -199,20 +218,43 @@ $product = ProductData::getById($p["product_id"]);
 
 <script>
 $(document).ready(function(){
-    $("#btn_add_abonos").click(function(e){
+    
+    $(document).on('click','.btn_delete_abono', function(e){
         e.preventDefault();
-        var tipo = $("#row_tipo_abono").val();
-        var monto = $("#row_monto_abono").val();
-        var fecha = $("#row_fecha_abono").val();
-        
-        cont = '<tr>';
-        cont += '<td>'+tipo+'</td>';
-        cont += '<td style="text-align: right;">'+monto+'</td>';
-        cont += '<td style="text-align: right;">'+fecha+'</td>';
-        cont += '</tr>';              
-        
-        $("#lista_abonos tbody").append(cont);
+        $(this).closest('tr').fadeOut(300, function(){
+            $(this).remove();
+        })
+        var monto_restar = parseInt( $(this).closest('tr').find('.tot_efectivo').val() );
+        var monto_total_efectivo = ( $("#money").val() - monto_restar )
+        $("#money").val( monto_total_efectivo );
     })
+    
+    $("#btn_add_abonos").click(function(e){
+        index = 0;
+        e.preventDefault();
+        if( $("#row_tipo_abono").val() == "" ){
+            alert("Debe seleccionar un tipo de abono");
+        } else {
+            var tipo = $("#row_tipo_abono").val();
+            var monto = $("#row_monto_abono").val();
+            var fecha = $("#row_fecha_abono").val();
+            var identificador = $("#row_identificador_abono").val();
+            
+            cont = '<tr>';
+            cont += '<td>'+tipo+'</td>';
+            cont += '<td style="text-align: right;">'+monto+'</td>';
+            cont += '<td style="text-align: right;">'+fecha+'</td>';
+            cont += '<td style="text-align: right;">'+identificador+' <input type="hidden" name="abonos['+index+'][identificador]" value="'+identificador+'" /></td>';
+            cont += '<td> <a href="#" class="btn btn-xs btn-danger btn_delete_abono"><i class="fa fa-trash-o"></i></a> </td>';
+            cont += '</tr>';              
+            
+            $("#lista_abonos tbody").append(cont);
+            index++;
+        }
+    })
+    
+    $("#row_fecha_abono").datePicker();
+    
 })
 </script>
 

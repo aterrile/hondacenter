@@ -12,9 +12,9 @@ class SellData {
 	public function getD(){ return DData::getById($this->d_id);}
 	public function getStockTo(){ return StockData::getById($this->stock_to_id);}
 
-    public function addAbonos($sellId, $tipo, $monto, $fecha){
-		$sql = "insert into abonos (sell_id, tipo, monto, fecha) ";
-		$sql .= "values ($sellId,'$tipo',$monto,'$fecha')";
+    public function addAbonos($sellId, $tipo, $monto, $identificador, $fecha){
+		$sql = "insert into abonos (sell_id, tipo, monto, identificador, fecha) ";
+		$sql .= "values ($sellId,'$tipo',$monto,'$identificador','$fecha')";
 		return Executor::doit($sql);
 	}
     

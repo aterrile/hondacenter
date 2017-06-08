@@ -190,6 +190,15 @@ $total = 0;
 <table class="table table-bordered table-hover">
 <thead>
 	<th style="width:30px;">Codigo</th>
+    
+    <th style="width: 30px;">Nombre</th>
+    <th style="width: 30px;">Marca</th>
+    <th style="width: 30px;">Modelo</th>
+    <th style="width: 30px;">Color</th>
+    <th style="width: 30px;">Chasis</th>
+    
+    
+    
 	<th style="width:30px;">Cantidad</th>
 	<th style="width:30px;">Unidad</th>
 	<th>Producto</th>
@@ -199,9 +208,18 @@ $total = 0;
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
 $product = ProductData::getById($p["product_id"]);
+$info_moto = ProductData::getInfoMoto($p["product_id"]);
 ?>
 <tr >
 	<td><?php echo $product->id; ?></td>
+    
+    <td><?php echo $product->name; ?></td>
+    <td> <?php echo $info_moto->marca; ?> </td>
+    <td> <?php echo $info_moto->modelo; ?> </td>
+    <td> <?php echo $info_moto->color; ?> </td>
+    <td> <?php echo $info_moto->chasis; ?> </td>
+    
+    
 	<td ><?php echo $p["q"]; ?></td>
 	<td><?php echo $product->unit; ?></td>
 	<td><?php echo $product->name; ?></td>
@@ -289,7 +307,7 @@ $clients = DData::getAll();
       <div class="clearfix"></div>
 <br>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="box box-primary">
             <div style="padding: 10px;">
                 <strong>Abonos</strong>
@@ -299,7 +317,7 @@ $clients = DData::getAll();
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 50%;">
+                                <th style="width: 25%;">
                                 Tipo<br />
                                 <select id="row_tipo_abono" class="form-control">
                                     <option value="">Seleccione...</option>
@@ -323,6 +341,10 @@ $clients = DData::getAll();
                                 Fecha<br />
                                 <input id="row_fecha_abono" type="date" class="form-control" value="<?php echo date('Y-m-d') ?>" style="text-align: right;" />
                                 </th>
+                                <th style="width: 25%;">
+                                Identificador<br />
+                                <input id="row_identificador_abono" type="text" class="form-control" value="" style="text-align: right;" />
+                                </th>
                             </tr>
                         </thead>
                         <tbody></tbody>
@@ -333,7 +355,7 @@ $clients = DData::getAll();
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-4">
         <div class="box box-primary">
         <table class="table table-bordered">
         <tr>
@@ -393,71 +415,85 @@ $(document).ready(function(){
     var total_efectivo = 0;
     $("#btn_add_abonos").click(function(e){
         e.preventDefault();
-        var tipo = $("#row_tipo_abono").val();
-        var monto = parseInt($("#row_monto_abono").val());
-        var fecha = $("#row_fecha_abono").val();
-        
-        cont = '<tr>';
-        cont += '<td>'+tipo+' <input type="hidden" name="abonos['+index+'][tipo]" value="'+tipo+'" /> </td>';
-        cont += '<td style="text-align: right;">'+monto+' <input type="hidden" class="tot_efectivo" name="abonos['+index+'][monto]" value="'+monto+'" /></td>';
-        cont += '<td style="text-align: right;">'+fecha+' <input type="hidden" name="abonos['+index+'][fecha]" value="'+fecha+'" /></td>';
-        cont += '<td> <a href="#" class="btn btn-xs btn-danger btn_delete_abono"><i class="fa fa-trash-o"></i></a> </td>';
-        cont += '</tr>';
-        
-        current_total = parseInt($("#money").val());
-        $("#money").val( current_total + monto );
-        
-        $("#lista_abonos tbody").append(cont);
-        index++;
+        if( $("#row_tipo_abono").val() == "" ){
+            alert("Debe seleccionar un tipo de abono");
+        } else {
+            var tipo = $("#row_tipo_abono").val();
+            var monto = parseInt($("#row_monto_abono").val());
+            var fecha = $("#row_fecha_abono").val();
+            var identificador = $("#row_identificador_abono").val();
+            
+            cont = '<tr>';
+            cont += '<td>'+tipo+' <input type="hidden" name="abonos['+index+'][tipo]" value="'+tipo+'" /> </td>';
+            cont += '<td style="text-align: right;">'+monto+' <input type="hidden" class="tot_efectivo" name="abonos['+index+'][monto]" value="'+monto+'" /></td>';
+            cont += '<td style="text-align: right;">'+fecha+' <input type="hidden" name="abonos['+index+'][fecha]" value="'+fecha+'" /></td>';
+            cont += '<td style="text-align: right;">'+identificador+' <input type="hidden" name="abonos['+index+'][identificador]" value="'+identificador+'" /></td>';
+            cont += '<td> <a href="#" class="btn btn-xs btn-danger btn_delete_abono"><i class="fa fa-trash-o"></i></a> </td>';
+            cont += '</tr>';
+            
+            current_total = parseInt($("#money").val());
+            $("#money").val( current_total + monto );
+            
+            $("#lista_abonos tbody").append(cont);
+            index++;
+            
+            $("#row_tipo_abono, #row_identificador_abono").val('');
+            $("##row_monto_abono").val('0');
+        }
     })
 })
 
 $("#processsell").submit(function(e){
 	discount = $("#discount").val();
-p = $("#p_id").val();
-client = $("#client_id").val();
-	money = $("#money").val();
-if(money!=""){
-if(p!=4){
-	if(money<(<?php echo $total;?>-discount)){
-		alert("Efectivo insificiente!");
-		e.preventDefault();
-	}else{
-		if(discount==""){ discount=0;}
-		go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
-		if(go){}
-			else{e.preventDefault();}
-	}
-}else if(p==4){ // usaremos credito
-  if(client!=""){
-    // procedemos
-    cli=null;
-    <?php 
-    foreach(PersonData::getClients() as $cli){
-      echo " cli[$cli->id]=$cli->has_credit ;";
+    p = $("#p_id").val();
+    client = $("#client_id").val();
+    money = $("#money").val();
+    if( $("#lista_abonos tbody tr").length == 0 ){
+        alert("Debe ingresar al menos 1 abono");
+        e.preventDefault();
+    } else {
+        if(money!=""){
+            if(p!=4){
+            	if(money<(<?php echo $total;?>-discount)){
+            		alert("Efectivo insificiente!");
+            		e.preventDefault();
+            	}else{
+            		if(discount==""){ discount=0;}
+            		go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
+            		if(go){}
+            			else{e.preventDefault();}
+            	}
+            }else if(p==4){ // usaremos credito
+              if(client!=""){
+                // procedemos
+                cli=null;
+                <?php 
+                foreach(PersonData::getClients() as $cli){
+                  echo " cli[$cli->id]=$cli->has_credit ;";
+                }
+                ?>
+            
+                if(cli[client]==1){
+                  // si el cliente tiene credito entonces procedemos a hacer la venta a credito :D
+            
+                }else{
+                  // el cliente no tiene credito
+                  alert("El cliente seleccionado no cuenta con credito!");
+                  e.preventDefault();
+            
+                }
+              }else{
+                // 
+                alert("Debe seleccionar un cliente!");
+                e.preventDefault();
+              }
+        
+            }
+        }else{
+            alert("Campo de pago vacio")
+            e.preventDefault();
+        }
     }
-    ?>
-
-    if(cli[client]==1){
-      // si el cliente tiene credito entonces procedemos a hacer la venta a credito :D
-
-    }else{
-      // el cliente no tiene credito
-      alert("El cliente seleccionado no cuenta con credito!");
-      e.preventDefault();
-
-    }
-  }else{
-    // 
-    alert("Debe seleccionar un cliente!");
-    e.preventDefault();
-  }
-
-}
-}else{
-alert("Campo de pago vacio")
-e.preventDefault();
-}
 });
 </script>
         

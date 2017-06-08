@@ -3,11 +3,13 @@
 * @author evilnapsis
 **/
 
-function show_array($array, $die=0){
+function show_array($array, $die=1){
     echo "<pre>";
     print_r($array);
     echo "</pre>";
-    die();
+    if($die){
+        die();
+    }
 }
 
 define("ROOT", dirname(__FILE__));

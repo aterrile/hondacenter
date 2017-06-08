@@ -56,62 +56,51 @@
           <!-- Navbar Right Menu -->
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-
-
-            <?php
-            $found=array();
-            $products = ProductData::getAll();
-            //print_r($products);
-            foreach($products as $product){
-                $q= OperationData::getQByStock($product->id,StockData::getPrincipal()->id);
-                if($q==0){ 
-                    $found[]=array(
-                        'icono' => '<i class="fa fa-warning text-red"></i>',
-                        'label' => $product->name . "<span class='label label-danger'>Sin Stock.</span>" 
-                    );
-                }else if($q<=$product->inventary_min/2){ 
-                    $found[]=array(
-                        'icono' => '<i class="fa fa-warning text-red"></i>',
-                        'label' => $product->name . "<span class='label label-danger'>Stock MUY BAJO</span>" 
-                    );
-                } else if($q<=$product->inventary_min){ 
-                    $found[]=array(
-                        'icono' => '<i class="fa fa-warning text-yellow"></i>',
-                        'label' => $product->name . "<span class='label label-warning'>Stock Bajo</span>" 
-                    );   
-                }                                
-            }
-            ?>          
-            
-            <li class="dropdown notifications-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-bell-o"></i>
-              <?php if( count($found) ){ ?>
-              <span class="label label-danger"><?php echo count($found);?></span>
-              <?php } else { ?>
-              <span class="label label-success">0</span>
-              <?php } ?>
-            </a>
-            <ul class="dropdown-menu">
-              <li class="header">Tienes <?php echo count($found);?> alertas de productos </li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  
-                  <?php foreach($found as $i): ?>
-                      <li> 
-                        <a href="./?view=alerts">                             
-                            <?php echo $i['icono'] ?>
-                            <?php echo $i['label'] ?> 
-                        </a>
-                      </li>
-                      
-                    <?php endforeach; ?>
-                </ul>
-              </li>
-              <li class="footer"><a href="./?view=alerts">Todos las alertas</a></li>
-            </ul>
-            </li>                  
+                <?php
+                    $array_tannen = array();
+                    $sql = "SELECT * FROM `abonos` WHERE `tipo` LIKE '%TANNER%' OR tipo like '%MARUBENNI%' order by tipo";
+                    $creditos_tannen = Executor::doit($sql);
+                    while($r = $creditos_tannen[0]->fetch_array()){
+            			$thisSell = SellData::getById($r['sell_id']);
+                        if( $thisSell ){
+                            $created = $thisSell->created_at;
+                            $strCreated = strtotime($created);
+                            $array_tannen[] = array(
+                                'tipo' => $r['tipo'],
+                                'sell_id' => $r['sell_id'],
+                                'monto' => number_format($thisSell->total,0,',','.'),
+                                'fecha' => date('d-M-Y',$strCreated)
+                            );
+                        }
+                    }
+                    if( count($array_tannen) == 0 ){
+                        $warning_tag = 'success';
+                    }
+                    if( ( count($array_tannen) > 0 ) && ( count($array_tannen) < 7 ) ){
+                        $warning_tag = 'warning';
+                    }
+                    if( count($array_tannen) > 7  ){
+                        $warning_tag = 'danger';
+                    }
+                ?>
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bell-o"></i>
+                      <span class="label label-<?php echo $warning_tag ?>"><?php echo count($array_tannen) ?></span>
+                    </a>
+                    <ul class="dropdown-menu" style="width: 370px;">
+                        <?php foreach( $array_tannen as $k ){ ?>
+                        <li> 
+                            <a href="./?view=onesell&id=<?php echo $k['sell_id']; ?>">                             
+                            <i class="fa fa-warning text-red"></i>
+                            <?php echo $k['tipo'];  ?> por $<?php echo $k['monto'];  ?> - <?php echo $k['fecha']; ?>
+                            </a>
+                        </li>
+                        <?php } ?>  
+                        
+                        <li class="footer"><a href="./?view=sells">Todas las Ventas</a></li>
+                    </ul>
+                </li>                  
             <?php endif;?>
 
 

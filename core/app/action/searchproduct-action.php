@@ -14,7 +14,7 @@ $products = ProductData::getLike($search);
 if(count($products)>0){
 	?>
 <h3>Resultados de la Busqueda</h3>
-<div class="box box-primary">
+<div class="box box-primary table-responsive">
 <table class="table table-bordered table-hover">
 	<thead>
 		<th>Codigo</th>
@@ -78,6 +78,58 @@ $products_in_cero=0;
 ?>
 <?php  endif; ?>
 	<?php endforeach;?>
+    
+    
+    <tr>
+        <td colspan="12" style="background: #FF6F6F; color: #fff; text-align: center;"> <strong>Stock en otras bodegas</strong> </td>
+    </tr>
+    
+    
+    <?php
+    
+    $stocks = StockData::getAll();
+    foreach( $stocks as $stock ){
+    ?>
+    <tr>
+        <td colspan="12" style="background: #F7D664; color: #333;"> <strong><?php echo $stock->name ?></strong> </td>
+    </tr>
+    <?php
+        $products_in_cero=0;
+    	foreach($products as $product):
+            $q= OperationData::getQByStock($product->id,$stock->id);
+            $info_moto = ProductData::getInfoMoto($product->id);
+        	?>
+        	<?php 
+        	if($q>0):?>
+        		
+        	<tr class="<?php if($q<=$product->inventary_min){ echo "danger"; }?>">
+        		<td style="width:80px;"><?php echo $product->id; ?></td>
+        		<td><?php echo $product->name; ?></td>
+        		
+                <td> <?php echo $info_moto->marca; ?> </td>
+                <td> <?php echo $info_moto->modelo; ?> </td>
+                <td> <?php echo $info_moto->color; ?> </td>
+                <td> <?php echo $info_moto->chasis; ?> </td>
+                
+                <td><b>$<?php echo $product->price_in; ?></b></td>
+        		<td><b>$<?php echo $product->price_out; ?></b></td>
+        		
+                <td> <?php echo $q; ?> </td>
+                
+                <td> <?php echo $info_moto->fecha_ingreso_bodega; ?> </td>
+                <td> <?php echo $info_moto->estado; ?> </td>
+                
+        		<td style="width:250px;"></td>
+        	</tr>
+        
+            <?php else:$products_in_cero++; ?>
+            <?php  endif; ?>
+        <?php 
+        endforeach;
+    }
+?>
+    
+    
 </table>
 </div>
 <?php if($products_in_cero>0){ echo "<p class='alert alert-warning'>Se omitieron <b>$products_in_cero productos</b> que no tienen existencias en el inventario. <a href='index.php?view=inventary&stock=".StockData::getPrincipal()->id."'>Ir al Inventario</a></p>"; }?>

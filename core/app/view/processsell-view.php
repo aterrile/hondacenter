@@ -3,7 +3,7 @@ date_default_timezone_set("America/Mexico_City");
 
 if(isset($_SESSION["cart"])){
 	$cart = $_SESSION["cart"];
-            
+
 	if(count($cart)>0){
 /// antes de proceder con lo que sigue vamos a verificar que:
 		// haya existencia de productos
@@ -76,7 +76,8 @@ $_SESSION["errors"] = $errors;
                     $tipo = $abono['tipo'];
                     $monto = $abono['monto'];
                     $fecha = $abono['fecha'];                    
-                    $sell->addAbonos($sellId, $tipo, $monto, $fecha);    
+                    $identificador = $abono['identificador'];                    
+                    $sell->addAbonos($sellId, $tipo, $monto,$identificador, $fecha);    
                 }
             }            
             
@@ -118,7 +119,8 @@ $_SESSION["errors"] = $errors;
 
 
 
-////////////////// generando el mensaje
+////////////////// generando el mensaje 
+/**
 		$subject = "[".$s[1]."] Nueva venta en el inventario";
 		$message = "<p>Se ha realizado una venta con Id = ".$s[1]."</p>";
 $person_th="";
@@ -139,7 +141,7 @@ if($_POST["client_id"]!=""){
 		<td>Estado de entrega</td>
 		<td>Total</td>
 		</tr>
-<tr>
+        <tr>
 		<td>".$s[1]."</td>
 		$person_td
 		<td>".StockData::getById($sell->stock_to_id)->name."</td>
@@ -210,7 +212,7 @@ if($qx<=$product->inventary_min && $last){
 			    $m->send();
 			}
 //////////////////
-
+**/
 
 
 
