@@ -96,7 +96,8 @@ $total = 0;
 	<th style="width:30px;">Precio Total</th>
 	<th ></th>
 </thead>
-<?php foreach($_SESSION["cotization"] as $p):
+<?php 
+foreach($_SESSION["cotization"] as $p):
 $product = ProductData::getById($p["product_id"]);
 $info_moto = ProductData::getInfoMoto($p["product_id"]);
 ?>

@@ -17,8 +17,9 @@ if(isset($_GET["product_id"])){
 
 }else{
  unset($_SESSION["cart"]);
-}
 
+}
+ unset($_SESSION["cotization"]);
 print "<script>window.location='index.php?view=sell';</script>";
 
 ?>
