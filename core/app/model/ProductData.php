@@ -122,7 +122,21 @@ class InfoMotosData{
         $this->moto_combustible = "";
         $this->fecha_ingreso_bodega = "";
         $this->estado = "";
-	}       
+	}   
+    
+    public function add(){		
+        $sql = "
+        INSERT INTO ".self::$tablename." 
+            (product_id, marca, modelo, color, year, chasis, motor, peso, combustible, fecha_ingreso_bodega, estado)
+        VALUES 
+            ($this->product_id,'$this->moto_marca','$this->moto_modelo','$this->moto_color','$this->moto_year','$this->moto_chasis','$this->moto_motor','$this->moto_peso','$this->moto_combustible','$this->fecha_ingreso_bodega','$this->estado')";
+        return Executor::doit($sql);        
+	}
+    
+    public function delete(){		
+        $sql = "DELETE FROM ".self::$tablename." WHERE  product_id = $this->product_id";            
+        return Executor::doit($sql);        
+	}    
 }
 
 
