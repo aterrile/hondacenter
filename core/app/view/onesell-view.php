@@ -120,7 +120,7 @@ $user = $sell->getUser();
 </div>
 <br><br>
 <div class="row">
-<div class="col-md-4">
+<div class="col-lg-6 col-sm-12">
 
 <div class="box box-primary">
     <table class="table table-bordered">
@@ -129,7 +129,7 @@ $user = $sell->getUser();
                 <th> Tipo </th>
                 <th> Monto </th>
                 <th> Fecha </th>
-                
+                <th> Identificador </th>
             </tr>
         </thead>
         <tbody>
@@ -150,6 +150,9 @@ $user = $sell->getUser();
                 $str_fecha = strtotime($abono->fecha);
                 echo date('d-M-Y', $str_fecha);
                 ?>
+            </td>
+            <td>
+                <?php echo $abono->identificador ?>
             </td>
           </tr>
         <?php } ?>
