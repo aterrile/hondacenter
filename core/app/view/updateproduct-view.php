@@ -36,7 +36,7 @@ if(count($_POST)>0){
 	}
 
 
-    $info_motos = new InfoMotos();        
+    $info_motos = new InfoMotosData();
     $info_motos->product_id = $product->id;                
     $info_motos->delete();
     if( $category_id == 1 ){        
