@@ -58,7 +58,7 @@
             <ul class="nav navbar-nav">
                 <?php
                     $array_tannen = array();
-                    $sql = "SELECT * FROM `abonos` WHERE `tipo` LIKE '%TANNER%' OR tipo like '%MARUBENNI%' order by tipo";
+                    $sql = "SELECT * FROM `abonos` WHERE `tipo` LIKE '%TANNER%' OR tipo like '%MARUBENNI%' order by tipo ASC, fecha DESC";
                     $creditos_tannen = Executor::doit($sql);
                     while($r = $creditos_tannen[0]->fetch_array()){
             			$thisSell = SellData::getById($r['sell_id']);
@@ -89,6 +89,7 @@
                       <span class="label label-<?php echo $warning_tag ?>"><?php echo count($array_tannen) ?></span>
                     </a>
                     <ul class="dropdown-menu" style="width: 370px;">
+                        <li class="header text-center"> Total de ventas: <?php echo count($array_tannen) ?> </li>
                         <?php foreach( $array_tannen as $k ){ ?>
                         <li> 
                             <a href="./?view=onesell&id=<?php echo $k['sell_id']; ?>">                             
@@ -98,7 +99,7 @@
                         </li>
                         <?php } ?>  
                         
-                        <li class="footer"><a href="./?view=sells">Todas las Ventas</a></li>
+                        <li class="footer"><a href="./?view=sells">Ver todas las Ventas</a></li>
                     </ul>
                 </li>                  
             <?php endif;?>
