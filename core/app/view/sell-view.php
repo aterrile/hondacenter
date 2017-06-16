@@ -231,7 +231,7 @@ $info_moto = ProductData::getInfoMoto($p["product_id"]);
 <?php endforeach; ?>
 </table>
 </div>
-<form method="post" class="form-horizontal" id="processsell" action="index.php?view=processsell">
+<form method="post" class="form-horizontal" id="processsell" action="index.php?view=processsell" enctype="multipart/form-data">
 <h2>Resumen</h2>
 <div class="row">
 <div class="col-md-3">
@@ -270,44 +270,49 @@ $clients = PersonData::getClients();
     </div>
   </div>
   </div>
-<div class="row">
 
-<div class="col-md-6">
-    <label class="control-label">Pago</label>
-    <div class="col-lg-12">
-    <?php 
-$clients = PData::getAll();
-    ?>
-    <select name="p_id" id="p_id" class="form-control">
-    <?php foreach($clients as $client):?>
-    	<option value="<?php echo $client->id;?>"><?php echo $client->name;?></option>
-    <?php endforeach;?>
-    	</select>
+  <!--
+  <div class="row">
+        <div class="col-md-6">
+            <label class="control-label">Pago</label>
+            <div class="col-lg-12">
+            <?php
+        $clients = PData::getAll();
+            ?>
+            <select name="p_id" id="p_id" class="form-control">
+            <?php foreach($clients as $client):?>
+            	<option value="<?php echo $client->id;?>"><?php echo $client->name;?></option>
+            <?php endforeach;?>
+            	</select>
+            </div>
+          </div>
+        <div class="col-md-6">
+            <label class="control-label">Entrega</label>
+
+            <div class="col-lg-12">
+            <?php
+        $clients = DData::getAll();
+            ?>
+            <select name="d_id" class="form-control">
+            <?php foreach($clients as $client):?>
+            	<option value="<?php echo $client->id;?>"><?php echo $client->name;?></option>
+            <?php endforeach;?>
+            	</select>
+            </div>
+          </div>
     </div>
-  </div>
-<div class="col-md-6">
-    <label class="control-label">Entrega</label>
+    -->
 
-    <div class="col-lg-12">
-    <?php 
-$clients = DData::getAll();
-    ?>
-    <select name="d_id" class="form-control">
-    <?php foreach($clients as $client):?>
-    	<option value="<?php echo $client->id;?>"><?php echo $client->name;?></option>
-    <?php endforeach;?>
-    	</select>
-    </div>
-  </div>
+    <input type="hidden" name="p_id" id="p_id" value="1" />
+    <input type="hidden" name="d_id" id="d_id" value="1" />
 
-</div>
 
 
       <input type="hidden" name="total" value="<?php echo $total; ?>" class="form-control" placeholder="Total">
       <div class="clearfix"></div>
 <br>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="box box-primary">
             <div style="padding: 10px;">
                 <strong>Abonos</strong>
@@ -317,7 +322,7 @@ $clients = DData::getAll();
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">
+                                <th style="width: 20%;">
                                 Tipo<br />
                                 <select id="row_tipo_abono" class="form-control">
                                     <option value="">Seleccione...</option>
@@ -333,15 +338,15 @@ $clients = DData::getAll();
                                     <option value="OC">OC</option>                                    
                                 </select>
                                 </th>
-                                <th style="width: 25%;">
+                                <th style="width: 20%;">
                                 Monto<br />
                                 <input id="row_monto_abono" type="text" class="form-control" value="0" style="text-align: right;" />
                                 </th>
-                                <th style="width: 25%;">
+                                <th style="width: 20%;">
                                 Fecha<br />
                                 <input id="row_fecha_abono" type="date" class="form-control" value="<?php echo date('Y-m-d') ?>" style="text-align: right;" />
                                 </th>
-                                <th style="width: 25%;">
+                                <th style="width: 40%;">
                                 Identificador<br />
                                 <input id="row_identificador_abono" type="text" class="form-control" value="" style="text-align: right;" />
                                 </th>
@@ -350,7 +355,48 @@ $clients = DData::getAll();
                         <tbody></tbody>
                     </table>
                 </div>
-                <a href="#" id="btn_add_abonos" class="btn btn-success btn-md"><i class="fa fa-plus"></i></a>
+                <a href="#" id="btn_add_abonos" class="btn btn-primary btn-md"><i class="fa fa-plus"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="box box-success">
+            <div style="padding: 10px;">
+                <strong>Descuentos</strong>
+
+                <br style="clear: both;" />
+                <div id="lista_descuentos">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 33%;">
+                                Tipo<br />
+                                <select id="row_tipo_descuento" class="form-control">
+                                    <option value="">Seleccione...</option>
+                                    <option value="1">BONO HONDA</option>
+                                    <option value="2">BONO DEALER</option>
+                                    <option value="3">BONO HONDA + DEALER</option>
+                                    <option value="4">BONO MARUBENNI/TANNER</option>
+                                </select>
+                                </th>
+                                <th style="width: 33%;">
+                                Monto<br />
+                                <input id="row_monto_descuento" type="text" class="form-control" value="0" style="text-align: right;" />
+                                </th>
+                                <th style="width: 33%;">
+                                Glosa<br />
+                                <input id="row_glosa_descuento" type="text" class="form-control" value="" style="text-align: right;" />
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <a href="#" id="btn_add_descuentos" class="btn btn-success btn-md"><i class="fa fa-plus"></i></a>
             </div>
         </div>
     </div>
@@ -392,9 +438,23 @@ $clients = DData::getAll();
               </div>
             </div>
           </div>
-        </form>        
+
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-body">
+                <input type="text" name="comision_dealer" /> &nbsp; <label>Comision Dealer</label>
+            </div>
+
+        </div>
     </div>
 </div>
+
+</form>
 
 
 <script>
@@ -427,8 +487,12 @@ $(document).ready(function(){
             cont += '<td>'+tipo+' <input type="hidden" name="abonos['+index+'][tipo]" value="'+tipo+'" /> </td>';
             cont += '<td style="text-align: right;">'+monto+' <input type="hidden" class="tot_efectivo" name="abonos['+index+'][monto]" value="'+monto+'" /></td>';
             cont += '<td style="text-align: right;">'+fecha+' <input type="hidden" name="abonos['+index+'][fecha]" value="'+fecha+'" /></td>';
-            cont += '<td style="text-align: right;">'+identificador+' <input type="hidden" name="abonos['+index+'][identificador]" value="'+identificador+'" /></td>';
-            cont += '<td> <a href="#" class="btn btn-xs btn-danger btn_delete_abono"><i class="fa fa-trash-o"></i></a> </td>';
+            cont += '<td style="text-align: left;">'+identificador+' <input type="hidden" name="abonos['+index+'][identificador]" value="'+identificador+'" />';
+            if( ( tipo == 'CREDITO MARUBENNI' ) || ( tipo == 'CREDITO TANNER' ) ){
+                cont += '<br><input type="file" id="carta_aceptacion_creditos" name="carta_aceptacion_creditos" style="display:inline">';
+            }
+            cont += '</td>';
+            cont += '<td> <a href="#" class="btn btn-xs btn-danger btn_delete_abono"><i class="fa fa-trash-o"></i></a></td>';
             cont += '</tr>';
             
             current_total = parseInt($("#money").val());
@@ -438,9 +502,52 @@ $(document).ready(function(){
             index++;
             
             $("#row_tipo_abono, #row_identificador_abono").val('');
-            $("##row_monto_abono").val('0');
+            $("#row_monto_abono").val('0');
         }
     })
+
+
+    $(document).on('click','.btn_delete_descuento', function(e){
+        e.preventDefault();
+        $(this).closest('tr').fadeOut(300, function(){
+            $(this).remove();
+        })
+        var monto_restar = parseInt( $(this).closest('tr').find('.tot_efectivo').val() );
+        var monto_total_efectivo = ( $("#discount").val() - monto_restar )
+        $("#discount").val( monto_total_efectivo );
+    })
+
+    index = 0;
+    var total_efectivo = 0;
+    $("#btn_add_descuentos").click(function(e){
+        e.preventDefault();
+        if( $("#row_tipo_descuento").val() == "" ){
+            alert("Debe seleccionar un tipo de descuento");
+        } else {
+            var tipo = $("#row_tipo_descuento option:selected").text();
+            var tipo_val = $("#row_tipo_descuento").val();
+            var monto = parseInt($("#row_monto_descuento").val());
+            var glosa = $("#row_glosa_descuento").val();
+
+            cont = '<tr>';
+            cont += '<td>'+tipo+' <input type="hidden" name="descuentos['+index+'][tipo]" value="'+tipo_val+'" /> </td>';
+            cont += '<td style="text-align: right;">'+monto+' <input type="hidden" class="tot_efectivo" name="descuentos['+index+'][monto]" value="'+monto+'" /></td>';
+            cont += '<td style="text-align: right;">'+glosa+' <input type="hidden" name="descuentos['+index+'][glosa]" value="'+glosa+'" /></td>';
+            cont += '<td> <a href="#" class="btn btn-xs btn-danger btn_delete_descuento"><i class="fa fa-trash-o"></i></a> </td>';
+            cont += '</tr>';
+
+            current_total = parseInt($("#discount").val());
+            $("#discount").val( current_total + monto );
+
+            $("#lista_descuentos tbody").append(cont);
+            index++;
+
+            $("#row_tipo_descuento, #row_glosa_descuento").val('');
+            $("#row_monto_descuento").val('0');
+        }
+    })
+
+
 })
 
 $("#processsell").submit(function(e){
@@ -458,10 +565,15 @@ $("#processsell").submit(function(e){
             		alert("Efectivo insificiente!");
             		e.preventDefault();
             	}else{
-            		if(discount==""){ discount=0;}
-            		go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
-            		if(go){}
-            			else{e.preventDefault();}
+            	   if( ( $("input[name=carta_aceptacion_creditos]").length > 0 ) && ( $("input[name=carta_aceptacion_creditos]").val() == "" ) ){
+            	       alert("Debe adjuntar la carta de la Entidad Financiera del Crédito");
+                       e.preventDefault();
+            	   } else {
+                		if(discount==""){ discount=0;}
+                		go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
+                		if(go){}
+                			else{e.preventDefault();}
+                    }
             	}
             }else if(p==4){ // usaremos credito
               if(client!=""){

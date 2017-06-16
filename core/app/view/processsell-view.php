@@ -66,8 +66,9 @@ $_SESSION["errors"] = $errors;
 			$sell->discount = $_POST["discount"];
 			$sell->stock_to_id = StockData::getPrincipal()->id;
 			$sell->person_id=$_POST["client_id"]!=""?$_POST["client_id"]:"NULL";                        
+            $sell->comision_dealer = $_POST["comision_dealer"];
             
-			$s = $sell->add();                        
+            $s = $sell->add();
             
             /* Add Abonos */
             if( $_POST['abonos'] ){                                
@@ -76,8 +77,38 @@ $_SESSION["errors"] = $errors;
                     $tipo = $abono['tipo'];
                     $monto = $abono['monto'];
                     $fecha = $abono['fecha'];                    
-                    $identificador = $abono['identificador'];                    
-                    $sell->addAbonos($sellId, $tipo, $monto,$identificador, $fecha);    
+                    $identificador = $abono['identificador'];
+                    $carta_filename = "";
+
+                    if(isset($_FILES["carta_aceptacion_creditos"])){
+                        $carta = new Upload($_FILES["carta_aceptacion_creditos"]);
+                        $carta->file_name_body_add = "__V" . $sellId . "-DATE$fecha";
+                        if($carta->uploaded){
+                            $carta->Process("storage/cartas/");
+                            if($carta->processed){
+                                $carta_filename = $carta->file_dst_name;
+                            } else {
+                                $carta_filename = "ERROR PROCESING";
+                            }
+                        } else {
+                            $carta_filename = "ERROR UPLOADING";
+                        }
+                    }
+
+                    $sell->addAbonos($sellId, $tipo, $monto,$identificador, $fecha, $carta_filename);
+                }
+
+
+            }
+
+            /* Add Discounts */
+            if( @$_POST['descuentos'] ){
+                foreach( $_POST['descuentos'] as $desc ){
+                    $sellId = $s[1];
+                    $tipo = $desc['tipo'];
+                    $monto = $desc['monto'];
+                    $glosa = $desc['glosa'];
+                    $sell->addDescuentos($sellId, $tipo, $monto,$glosa);
                 }
             }            
             

@@ -22,25 +22,25 @@
 
 <?php
 $products = null;
+
 if(isset($_SESSION["user_id"])){
-if(Core::$user->kind==3){
-$products = SellData::getSellsByUS(Core::$user->id);
-
-}
-else if(Core::$user->kind==2){
-$products = SellData::getSellsByStockId(Core::$user->stock_id);
-}
-else{
-$products = SellData::getSells();
-
-}
-}else if(isset($_SESSION["client_id"])){
-$products = SellData::getSellsByPersonId($_SESSION["client_id"],1,1);	
+    if( @$_GET["credito"] == 1 ){
+        $products = SellData::getSellsCredit();
+    } else {
+        if(Core::$user->kind==3){
+            $products = SellData::getSellsByUS(Core::$user->id);
+        } else if(Core::$user->kind==2){
+            $products = SellData::getSellsByStockId(Core::$user->stock_id);
+        } else {
+            $products = SellData::getSells();
+        }
+    }
+} else if(isset($_SESSION["client_id"])){
+    $products = SellData::getSellsByPersonId($_SESSION["client_id"],1,1);
 }
 
 if(count($products)>0){
-
-	?>
+?>
 <br>
 <div class="box box-primary">
 <div class="box-header">
@@ -49,48 +49,55 @@ if(count($products)>0){
 <table class="table table-bordered table-hover table-responsive datatable	">
 	<thead>
 		<th></th>
-		<th>Folio</th>	
-		<th>Pago</th>
-		<th>Entrega</th>
+		<th>Folio</th>
 		<th>Total</th>
 		<th>Cliente</th>
+        <?php if(@$_GET["credito"]){ ?>
+        <th> Credito </th>
+        <?php } ?>
 		<th>Vendedor</th>
 		<th>Almacen</th>
 		<th>Fecha</th>
 		<th></th>
 	</thead>
-	<?php foreach($products as $sell):
+    <tbody>
+	<?php
+    foreach($products as $sell):
 	$operations = OperationData::getAllProductsBySellId($sell->id);
+    $abonosCreditos = SellData::getAbonosCredito($sell->id);
 	?>
-
-	<tr>
-		<td style="width:30px;">
-		<a href="index.php?view=onesell&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-eye-open"></i></a></td>
-		<td>#<?php echo $sell->id; ?></td>
-
-<td><?php echo $sell->getP()->name; ?></td>
-<td><?php echo $sell->getD()->name; ?></td>
-		<td>
-
-<?php
-$total= $sell->total-$sell->discount;
-		echo "<b>$ ".number_format($total,2,".",",")."</b>";
-
-?>			
-		</td>
-	<td> <?php if($sell->person_id!=null){$c= $sell->getPerson();echo $c->name." ".$c->lastname;} ?> </td>
-	<td> <?php if($sell->user_id!=null){$c= $sell->getUser();echo $c->name." ".$c->lastname;} ?> </td>
-		<td><?php echo $sell->getStockTo()->name; ?></td>
-		<td><?php echo $sell->created_at; ?></td>
-		<td style="width:30px;">
-<?php if(isset($_SESSION["user_id"])):?>
-		<a href="index.php?view=delsell&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
-<?php endif;?>
-		</td>
-	</tr>
-
-<?php endforeach; ?>
-
+    <tr <?php echo ( count($abonosCreditos)>1 ) ? 'class="danger" data-toggle="tooltip" title="ERROR: Esta venta tiene mas de 1 Credito"' : ''; ?>>
+        <td style="width:30px;">
+            <a href="index.php?view=onesell&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-eye-open"></i></a>
+        </td>
+        <td>#<?php echo $sell->id; ?></td>
+        <td style="white-space: nowrap;">
+        <?php
+        $total= $sell->total-$sell->discount;
+        echo "<b>$ ".number_format($total,2,".",",")."</b>";
+        ?>
+        </td>
+        <td> <?php if($sell->person_id!=null){$c= $sell->getPerson();echo $c->name." ".$c->lastname;} ?> </td>
+        <?php
+        if(@$_GET["credito"]){
+        echo "<td style='white-space:nowrap'>";
+        foreach( $abonosCreditos as $abono ){
+            echo $abono->tipo . " : $" . number_format($abono->monto,0,",",".") . "<br>";
+        }
+        echo "</td>";
+        }
+        ?>
+        <td> <?php if($sell->user_id!=null){$c= $sell->getUser();echo $c->name." ".$c->lastname;} ?> </td>
+        <td><?php echo $sell->getStockTo()->name; ?></td>
+        <td><?php echo $sell->created_at; ?></td>
+        <td style="width:30px;">
+            <?php if(isset($_SESSION["user_id"])):?>
+            <a href="index.php?view=delsell&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+            <?php endif;?>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
 </table>
 </div>
 </div>
@@ -177,6 +184,12 @@ doc.save('sells-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
 doc.save('sells-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
 <?php endif; ?>
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+
 </script>
 
 

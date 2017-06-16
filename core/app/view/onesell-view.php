@@ -17,6 +17,8 @@ $operations = OperationData::getAllProductsBySellId($_GET["id"]);
 $total = 0;
 
 $abonos = SellData::getAbonosById($sell->id);
+$descuentos = SellData::getDescuentosById($sell->id);
+
 ?>
 <?php
 if(isset($_COOKIE["selled"])){
@@ -120,68 +122,152 @@ $user = $sell->getUser();
 </div>
 <br><br>
 <div class="row">
-<div class="col-lg-6 col-sm-12">
+<div class="col-lg-10 col-sm-12">
 
-<div class="box box-primary">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th> Tipo </th>
-                <th> Monto </th>
-                <th> Fecha </th>
-                <th> Identificador </th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php 
-        $tot = 0;
-        foreach( $abonos as $abono ){ 
-        ?>
-          <tr>
-            <td><?php echo $abono->tipo ?></td>          
-            <td>
-                <?php 
-                $tot+=$abono->monto;
-                echo "$ " . number_format($abono->monto,0,'.',','); 
+
+<form action="index.php?view=updatesell" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="sell_id" value="<?php echo $_GET["id"] ?>" />
+    <div class="box box-primary">
+        <div class="box-header"> <strong>Abonos</strong> </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th> Tipo </th>
+                    <th> Monto </th>
+                    <th> Fecha </th>
+                    <th> Identificador </th>
+                    <th colspan="2"> Extra </th>
+
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            $tot = 0;
+            foreach( $abonos as $abono ){
+                $cadena = $abono->tipo;
+                $buscar = "CREDITO";
+                $resultado = strpos($cadena, $buscar);
+
                 ?>
-            </td>
-            <td>
-                <?php 
-                $str_fecha = strtotime($abono->fecha);
-                echo date('d-M-Y', $str_fecha);
-                ?>
-            </td>
-            <td>
-                <?php echo $abono->identificador ?>
-            </td>
-          </tr>
-        <?php } ?>
-        </tbody>  
-        <tfoot>
-            <tr>
-                <th colspan="2">
-                    <strong>Total:</strong>
-                </th>
-                <th><?php echo "$ " . number_format($tot,0,'.',','); ?>                      
-                </th>
-            </tr>
-        </tfoot>
-    </table>
-</div>
+                  <tr>
+                    <td><?php echo $abono->tipo ?></td>
+                    <td>
+                        <?php
+                        $tot+=$abono->monto;
+                        echo "$ " . number_format($abono->monto,0,',','.');
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        $str_fecha = strtotime($abono->fecha);
+                        echo date('d-M-Y', $str_fecha);
+                        ?>
+                    </td>
+                    <td>
+                        <?php echo $abono->identificador ?>
+                    </td>
+                    <td>
+                        <?php
+                        if($resultado !== FALSE){
+                        ?>
+                        <div class="form-group">
+                            <input type="checkbox" id="cobrado" name="cobrado" <?php if( $abono->cobrado ){ echo "checked"; } ?> /> <label for="cobrado">Cobrado</label>
+                            <br />
+                            <input type="text" name="factura_asociada_abono" id="factura_asociada_abono" value="<?php echo $abono->factura_nro ?>" /> &nbsp; <label for="factura_asociada_abono">Número Factura</label>
+                            <input type="hidden" name="abono_id" value="<?php echo $abono->id ?>" />
+                        </div>
+                        <?php
+                        }
+                        ?>
+                    </td>
+                    <?php if( @$abono->carta ){ ?>
+                    <td>
+                        <a href="storage/cartas/<?php echo $abono->carta ?>" target="_blank" class="btn btn-default">Ver Carta</a>
+                    </td>
+                    <?php } ?>
+                  </tr>
+            <?php } ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        <strong>Total:</strong>
+                    </th>
+                    <th><?php echo "$ " . number_format($tot,0,',','.'); ?></th>
+                    <th colspan="4"></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <?php if($resultado !== FALSE){ ?>
+    <button type="submit" class="btn btn-success pull-right">Actualizar</button>
+    <?php } ?>
+
+
+    <?php if($descuentos){ ?>
+    <!-- Descuentos -->
+    <div class="box box-primary">
+        <div class="box-header"> <strong>Descuentos</strong> </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th> Tipo </th>
+                    <th> Monto </th>
+                    <th> Glosa </th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            $tot = 0;
+            foreach( $descuentos as $discount ){
+            ?>
+              <tr>
+                <td><?php echo SellData::getTipoDescuento($discount->tipo); ?></td>
+                <td>
+                    <?php
+                    $tot+=$discount->monto;
+                    echo "$ " . number_format($discount->monto,0,',','.');
+                    ?>
+                </td>
+                <td>
+                    <?php echo $discount->glosa ?>
+                </td>
+
+              </tr>
+            <?php } ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        <strong>Total:</strong>
+                    </th>
+                    <th><?php echo "$ " . number_format($tot,0,',','.'); ?></th>
+                    <th colspan="4"></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <?php } ?>
+
+</form>
+
+<br style="clear: both;" />
+<br style="clear: both;" />
 
 <div class="box box-primary">
 <table class="table table-bordered">
   <tr>
     <td><h4>Descuento:</h4></td>
-    <td><h4>$ <?php echo number_format($sell->discount,2,'.',','); ?></h4></td>
+    <td><h4>$ <?php echo number_format($sell->discount,0,',','.'); ?></h4></td>
   </tr>
   <tr>
-    <td><h4>Subtotal:</h4></td>
-    <td><h4>$ <?php echo number_format($total,2,'.',','); ?></h4></td>
+    <td><h4>SubTotal:</h4></td>
+    <td><h4>$ <?php echo number_format($total - $sell->discount,0,',','.'); ?></h4></td>
   </tr>
   <tr>
     <td><h4>Total:</h4></td>
-    <td><h4>$ <?php echo number_format($total-  $sell->discount,2,'.',','); ?></h4></td>
+    <td><h4>$ <?php echo number_format($total,0,',','.'); ?></h4></td>
   </tr>
 </table>
 </div>
@@ -194,11 +280,11 @@ $credit=PaymentData::sumByClientId($sell->person_id)->total;
 <table class="table table-bordered">
   <tr>
     <td><h4>Saldo anterior:</h4></td>
-    <td><h4>$ <?php echo number_format($credit-$total,2,'.',','); ?></h4></td>
+    <td><h4>$ <?php echo number_format($credit-$total,0,',','.'); ?></h4></td>
   </tr>
   <tr>
     <td><h4>Saldo Actual:</h4></td>
-    <td><h4>$ <?php echo number_format($credit,2,'.',','); ?></h4></td>
+    <td><h4>$ <?php echo number_format($credit,0,',','.'); ?></h4></td>
   </tr>
 </table>
 </div>
@@ -352,6 +438,14 @@ doc.save('sell-<?php echo date("d-m-Y h:i:s",time()); ?>.pdf');
 <script>
   $(document).ready(function(){
   //  $("#makepdf").trigger("click");
+    $("#factura_asociada_abono").keyup(function(){
+        if( $(this).val().length > 0 ){
+            $("#cobrado").prop('checked',true);
+        } else {
+            $("#cobrado").prop('checked',false);
+        }
+
+    })
   });
 </script>
 

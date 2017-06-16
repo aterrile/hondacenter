@@ -58,7 +58,12 @@
             <ul class="nav navbar-nav">
                 <?php
                     $array_tannen = array();
-                    $sql = "SELECT * FROM `abonos` WHERE `tipo` LIKE '%TANNER%' OR tipo like '%MARUBENNI%' order by tipo ASC, fecha DESC";
+                    $sql = "
+                    SELECT * FROM `abonos`
+                    WHERE `tipo` LIKE '%TANNER%' OR tipo like '%MARUBENNI%'
+                    AND cobrado = 0
+                    ORDER BY tipo ASC, fecha DESC
+                    ";
                     $creditos_tannen = Executor::doit($sql);
                     while($r = $creditos_tannen[0]->fetch_array()){
             			$thisSell = SellData::getById($r['sell_id']);
@@ -84,7 +89,7 @@
                     }
                 ?>
                 <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="creditos_cobrar" title="Creditos por cobrar">
                       <i class="fa fa-bell-o"></i>
                       <span class="label label-<?php echo $warning_tag ?>"><?php echo count($array_tannen) ?></span>
                     </a>
@@ -99,7 +104,7 @@
                         </li>
                         <?php } ?>  
                         
-                        <li class="footer"><a href="./?view=sells">Ver todas las Ventas</a></li>
+                        <li class="footer"><a href="./?view=sells&credito=1">Ver todas las Ventas</a></li>
                     </ul>
                 </li>                  
             <?php endif;?>
@@ -413,31 +418,33 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $(".datatable").DataTable({
-          "language": {
-        "sProcessing":    "Procesando...",
-        "sLengthMenu":    "Mostrar _MENU_ registros",
-        "sZeroRecords":   "No se encontraron resultados",
-        "sEmptyTable":    "Ningún dato disponible en esta tabla",
-        "sInfo":          "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-        "sInfoEmpty":     "Mostrando registros del 0 al 0 de un total de 0 registros",
-        "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
-        "sInfoPostFix":   "",
-        "sSearch":        "Buscar:",
-        "sUrl":           "",
-        "sInfoThousands":  ",",
-        "sLoadingRecords": "Cargando...",
-        "oPaginate": {
-            "sFirst":    "Primero",
-            "sLast":    "Último",
-            "sNext":    "Siguiente",
-            "sPrevious": "Anterior"
-        },
-        "oAria": {
-            "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-        }
-    }
+            "language": {
+                "sProcessing":    "Procesando...",
+                "sLengthMenu":    "Mostrar _MENU_ registros",
+                "sZeroRecords":   "No se encontraron resultados",
+                "sEmptyTable":    "Ningún dato disponible en esta tabla",
+                "sInfo":          "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty":     "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix":   "",
+                "sSearch":        "Buscar:",
+                "sUrl":           "",
+                "sInfoThousands":  ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst":    "Primero",
+                    "sLast":    "Último",
+                    "sNext":    "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
+            }
         });
+        $('#creditos_cobrar').tooltip();
+
       });
     </script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.

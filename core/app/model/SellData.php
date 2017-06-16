@@ -12,9 +12,32 @@ class SellData {
 	public function getD(){ return DData::getById($this->d_id);}
 	public function getStockTo(){ return StockData::getById($this->stock_to_id);}
 
-    public function addAbonos($sellId, $tipo, $monto, $identificador, $fecha){
-		$sql = "insert into abonos (sell_id, tipo, monto, identificador, fecha) ";
-		$sql .= "values ($sellId,'$tipo',$monto,'$identificador','$fecha')";
+    public function addAbonos($sellId, $tipo, $monto, $identificador, $fecha, $carta=""){
+		$sql = "insert into abonos (sell_id, tipo, monto, identificador, fecha, carta) ";
+		$sql .= "values ($sellId,'$tipo',$monto,'$identificador','$fecha','$carta')";
+		return Executor::doit($sql);
+	}
+
+    public function addDescuentos($sellId, $tipo, $monto, $glosa){
+		$sql = "insert into descuentos (sell_id, tipo, monto, glosa) ";
+		$sql .= "values ($sellId,'$tipo',$monto,'$glosa')";
+		return Executor::doit($sql);
+	}
+
+    public static function getTipoDescuento($tipoDescuentoId){
+		switch($tipoDescuentoId){
+            case 1: $tipo = "BONO HONDA"; break;
+            case 2: $tipo = "BONO DEALER"; break;
+            case 3: $tipo = "BONO HONDA + DEALER"; break;
+            case 4: $tipo = "BONO MARUBENNI/TANNER"; break;
+            default: $tipo = "";
+		}
+
+        return $tipo;
+	}
+
+    public function updateAbonos($abono_id, $cobrado, $factura_nro){
+		$sql = "UPDATE abonos SET cobrado=$cobrado,factura_nro='$factura_nro' WHERE id = $abono_id";
 		return Executor::doit($sql);
 	}
     
@@ -24,10 +47,16 @@ class SellData {
 		return Model::many($query[0],new SellData());
 	}
     
+    public static function getDescuentosById($sell_id){
+		$sql = "select * from descuentos where sell_id=$sell_id";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new SellData());
+	}
+
 	public function add(){
-		$sql = "insert into ".self::$tablename." (person_id,stock_to_id,iva,p_id,d_id,total,discount,user_id,created_at) ";
-		$sql .= "value ($this->person_id,$this->stock_to_id,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at)";
-		return Executor::doit($sql);
+		$sql = "insert into ".self::$tablename." (person_id,stock_to_id,iva,p_id,d_id,total,discount,user_id,created_at,comision_dealer) ";
+		$sql .= "value ($this->person_id,$this->stock_to_id,$this->iva,$this->p_id,$this->d_id,$this->total,$this->discount,$this->user_id,$this->created_at,$this->comision_dealer)";
+        return Executor::doit($sql);
 	}
 	public function add_traspase(){
 		$sql = "insert into ".self::$tablename." (operation_type_id,iva,p_id,d_id,total,discount,user_id,created_at) ";
@@ -123,8 +152,20 @@ public function add_with_client(){
 		return Model::many($query[0],new SellData());
 	}
 
+    public static function getAbonosCredito($sell_id){
+		$sql = "SELECT * FROM abonos A WHERE A.sell_id = $sell_id and tipo LIKE 'CREDITO%'";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new SellData());
+	}
+
 	public static function getSells(){
 		$sql = "select * from ".self::$tablename." where operation_type_id=2 and p_id=1 and d_id=1 and is_draft=0 order by created_at desc";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new SellData());
+	}
+
+	public static function getSellsCredit(){
+		$sql = "select * from ".self::$tablename." where id in ( select sell_id from abonos where tipo like 'CREDITO%' ) order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new SellData());
 	}
